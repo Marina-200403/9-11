@@ -59,19 +59,13 @@ def output_arr(mat_1, mat_2, mat_rezult):
     print(mat_1, '\n', mat_2)
     print(mat_rezult)
     
-    
+def proverka_sum(m_1, m_2, m_3):
+    if m_1+m_2 == m_3:
+        degree = sort_decr([m_1, m_2, m_3], 3)[0]
+        return (m_1+m_2+m_3)**degree
+
 if __name__ == "__main__":
-    size = 3
-    print(is_int(23423), is_int("dlfj"), is_int("3452"))
-    mat_1 = input_arr(size)
-    print(mat_1)
-    mat_2 = generation_arr(size)
-    print(mat_2)
-    mat_rezult = sum_arr(mat_1, mat_2, size)
-    print(mat_rezult)
-    print(sort_incr(mat_1, size), sort_incr(mat_2, size))
-    print(sort_decr(mat_1, size), sort_decr(mat_2, size))
-    output_arr(mat_1, mat_2, mat_rezult)
+    print(proverka_sum(1,2,3), proverka_sum(1, 2, 4))
     
     
     
