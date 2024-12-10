@@ -48,6 +48,13 @@ def sort_incr(mat, size):
                 mat[j], mat[j+1] = mat[j+1], mat[j]
     return mat
 
+def sort_decr(mat, size):
+    for i in range (size):
+        for j in range(size-i-1):
+            if mat[j]>mat[j+1]:
+                mat[j], mat[j+1] = mat[j+1], mat[j]
+    return mat
+
 if __name__ == "__main__":
     size = 3
     print(is_int(23423), is_int("dlfj"), is_int("3452"))
@@ -57,3 +64,9 @@ if __name__ == "__main__":
     print(mat_2)
     print(sum_arr(mat_1, mat_2, size))
     print(sort_incr(mat_1, size), sort_incr(mat_2, size))
+    print(sort_decr(mat_1, size), sort_decr(mat_2, size))
+    
+    
+    
+    
+    
