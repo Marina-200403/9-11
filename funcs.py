@@ -64,9 +64,18 @@ def proverka_sum(m_1, m_2, m_3):
         degree = sort_decr([m_1, m_2, m_3], 3)[0]
         return (m_1+m_2+m_3)**degree
 
+def proverka_once(m_1, m_2, m_3):
+    if (m_1+m_2 == m_3) or (m_1*m_2 == m_3):
+        return True
+    else:
+        return proverka_twice(m_1, m_2, m_3)
+
+def proverka_twice(m_1, m_2, m_3):
+    pass
+
 if __name__ == "__main__":
     print(proverka_sum(1,2,3), proverka_sum(1, 2, 4))
-    
+    print(proverka_once(1, 2, 3), proverka_once(1, 2, 4))
     
     
     
