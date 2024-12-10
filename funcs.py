@@ -10,6 +10,20 @@ def is_int(s):
         return True
     except (Exception, ValueError, TypeError):
         return False
+    
+def input_arr(size):
+    mat = []
+    i = 0
+    print ("Введите числа")
+    while i != size:
+        count = input()
+        if is_int(count):
+            mat.append(int(count))
+            i += 1
+        else:
+            print ('try again')
+    return mat
 
 if __name__ == "__main__":
     print(is_int(23423), is_int("dlfj"), is_int("3452"))
+    print(input_arr(3))
