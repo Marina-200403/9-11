@@ -71,11 +71,17 @@ def proverka_once(m_1, m_2, m_3):
         return proverka_twice(m_1, m_2, m_3)
 
 def proverka_twice(m_1, m_2, m_3):
-    pass
+    for i in range(2):
+        if m_2 != 0:
+            if (m_1/m_2 == m_3) or (m_1**(1/m_2)):
+                return True
+        if (m_1-m_2 == m_3) or (m_1**m_2):
+            return True
+        m_1, m_2 = m_2, m_1
 
 if __name__ == "__main__":
     print(proverka_sum(1,2,3), proverka_sum(1, 2, 4))
-    print(proverka_once(1, 2, 3), proverka_once(1, 2, 4))
+    print(proverka_once(1, 2, 3), proverka_once(1, 2, 1), proverka_once(16, 2, 4))
     
     
     
