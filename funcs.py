@@ -78,11 +78,24 @@ def proverka_twice(m_1, m_2, m_3):
         if (m_1-m_2 == m_3) or (m_1**m_2):
             return True
         m_1, m_2 = m_2, m_1
+        
+        
+def make_mat():
+    size = input('Введите размер ')
+    while is_int(size) != True:
+        size = input('Введите целое число ')
+    size = int(size)
+    i = input('Нажмите Enter, если хотите ввести матрицу ')
+    if i == '':
+        mat_1 = input_arr(size)
+    else:
+        mat_1 = generation_arr(size)
+    return mat_1
 
 if __name__ == "__main__":
     print(proverka_sum(1,2,3), proverka_sum(1, 2, 4))
     print(proverka_once(1, 2, 3), proverka_once(1, 2, 1), proverka_once(16, 2, 4))
-    
+    print(make_mat())
     
     
     
