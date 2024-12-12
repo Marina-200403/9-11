@@ -1,5 +1,20 @@
 from random import randint
 
+def valid_value(message_input: str, message_err: str, template: list):
+    while True:
+        ch = input(message_input, )
+        if is_int(ch):
+            ch = int(ch)
+            if ch in template:
+                return ch
+        print(message_err)
+
+def valid_comand(ch, flag):
+    if flag >= ch:
+        return True
+    print ('ERROR')
+    return False
+
 def is_int(s):
     try:
         if type(s) is int:
@@ -55,8 +70,8 @@ def sort_decr(mat, size):
                 mat[j], mat[j+1] = mat[j+1], mat[j]
     return mat
 
-def output_arr(mat_1, mat_2, mat_rezult):
-    print(mat_1, '\n', mat_2)
+def mat_output(mat_1, mat_2, mat_rezult, mat_3 = []):
+    print(mat_1, '\n', mat_2, '\n', mat_3)
     print(mat_rezult)
     
 def proverka_sum(m_1, m_2, m_3):
@@ -73,24 +88,28 @@ def proverka_once(m_1, m_2, m_3):
 def proverka_twice(m_1, m_2, m_3):
     for i in range(2):
         if m_2 != 0:
-            if (m_1/m_2 == m_3) or (m_1**(1/m_2)):
+            if (m_1/m_2 == m_3) or (m_1**(1/m_2) == m_3):
                 return True
-        if (m_1-m_2 == m_3) or (m_1**m_2):
+        if (m_1-m_2 == m_3) or (m_1**m_2 == m_3):
             return True
         m_1, m_2 = m_2, m_1
+    return False
         
-        
-def make_mat():
-    size = input('Введите размер ')
-    while is_int(size) != True:
-        size = input('Введите целое число ')
-    size = int(size)
+def make_mat(size):
     i = input('Нажмите Enter, если хотите ввести матрицу ')
     if i == '':
         mat_1 = input_arr(size)
     else:
         mat_1 = generation_arr(size)
     return mat_1
+
+def algoritm(mat_1, mat_2, size):
+    mat_1 = sort_incr(mat_1, size)
+    mat_2 = sort_decr(mat_2, size)
+    mat_rezult = sum_arr(mat_1, mat_2, size)
+    return sort_decr(mat_rezult, size)
+
+
 
 if __name__ == "__main__":
     print(proverka_sum(1,2,3), proverka_sum(1, 2, 4))
